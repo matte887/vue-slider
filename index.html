@@ -17,6 +17,7 @@
                 v-for="(item, index) in destinations" 
                 class="item" 
                 :class="index === currentSlide ? 'active' : '' "
+                @mouseover="stopAutoScroll"
                 >
                     <img :src="item.countryImage" alt="">
                     <div class="text">

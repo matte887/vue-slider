@@ -68,10 +68,19 @@ const app = new Vue(
             //         this.currentSlide = 0;
             //     }
             // }
+
+            stopAutoScroll: function() {
+                this.autoscroll = 0 ;
+            }
         },
 
         mounted: function() {
             this.autoscroll();
+            
+            // La soluzione sotto fa in modo che lo script parta solo una volta che la pagina è stata renderizzata.
+            // this.$nextTick(function () {
+            //     this.autoscroll();
+            // });
         }
     }
 );
