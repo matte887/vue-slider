@@ -71,9 +71,7 @@ const app = new Vue(
         },
 
         mounted: function() {
-            this.$nextTick(() => {
-                this.autoscroll();
-            });
+            this.autoscroll();
         }
     }
 );
