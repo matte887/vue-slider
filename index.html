@@ -23,13 +23,13 @@
                
             </div>
             <div class="thumbs">
-                
-                <div class="thumb active">
-                    <img src="./img/01.jpg" alt="">
-                </div>
-               
                 <div class="prev"></div>
                 <div class="next"></div>
+                
+                <div class="thumb" v-for="item in destinations">
+                    <img :src="item.countryImage" alt="" >
+                </div>
+               
             </div>
        </div>
     </div>
