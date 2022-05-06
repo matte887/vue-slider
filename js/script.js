@@ -59,15 +59,15 @@ const app = new Vue(
             },
 
             autoscroll: function() {
-                setInterval(this.counter, 1500);
+                setInterval(this.nextSlide, 1500);
             },
 
-            counter: function() {
-                this.currentSlide++;
-                if (this.currentSlide > 4) {
-                    this.currentSlide = 0;
-                }
-            }
+            // counter: function() {
+            //     this.currentSlide++;
+            //     if (this.currentSlide > 4) {
+            //         this.currentSlide = 0;
+            //     }
+            // }
         },
 
         mounted: function() {
