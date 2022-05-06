@@ -29,7 +29,8 @@ const app = new Vue(
                     countryText: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.'
                 }
             ],
-            currentSlide: 0
+            currentSlide: 0,
+            prova: undefined
         },
         methods: {
             previousSlide: function() {
@@ -58,8 +59,8 @@ const app = new Vue(
                 this.currentSlide = index;
             },
 
-            autoscroll: function() {
-                setInterval(this.nextSlide, 1500);
+            autoScroll: function() {
+                this.prova = setInterval(this.nextSlide, 1500);
             },
 
             // counter: function() {
@@ -70,12 +71,13 @@ const app = new Vue(
             // }
 
             stopAutoScroll: function() {
-                this.autoscroll = 0 ;
+                clearInterval(this.prova);
+                this.prova = undefined;
             }
         },
 
         mounted: function() {
-            this.autoscroll();
+            this.autoScroll();
             
             // La soluzione sotto fa in modo che lo script parta solo una volta che la pagina è stata renderizzata.
             // this.$nextTick(function () {

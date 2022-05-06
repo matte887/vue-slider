@@ -18,6 +18,7 @@
                 class="item" 
                 :class="index === currentSlide ? 'active' : '' "
                 @mouseover="stopAutoScroll"
+                @mouseleave="autoScroll"
                 >
                     <img :src="item.countryImage" alt="">
                     <div class="text">
