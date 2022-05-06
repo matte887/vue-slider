@@ -56,7 +56,24 @@ const app = new Vue(
 
             clickThumb: function(index) {
                 this.currentSlide = index;
+            },
+
+            autoscroll: function() {
+                setInterval(this.counter, 1500);
+            },
+
+            counter: function() {
+                this.currentSlide++;
+                if (this.currentSlide > 4) {
+                    this.currentSlide = 0;
+                }
             }
+        },
+
+        mounted: function() {
+            this.$nextTick(() => {
+                this.autoscroll();
+            });
         }
     }
 );
