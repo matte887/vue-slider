@@ -32,7 +32,29 @@ const app = new Vue(
             currentSlide: 0
         },
         methods: {
+            activeThumb: function() {},
 
+            previousSlide: function() {
+                // se sono alla prima, mi posiziono sull'ultima
+                if (this.currentSlide == 0) {
+                    this.currentSlide = this.destinations.length - 1; // ultima
+                } else {
+                    this.currentSlide--; // precedente
+                }
+            
+                console.log('Prev', this.currentSlide);
+            },
+
+            nextSlide: function() {
+                // se sono all'ultima, mi posiziono sulla prima
+                if (this.currentSlide == this.destinations.length - 1) {
+                    this.currentSlide = 0; // prima
+                } else {
+                    this.currentSlide++; // successiva
+                }
+                
+                console.log('Next', this.currentSlide);
+            }
         }
     }
 );
