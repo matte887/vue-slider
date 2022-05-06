@@ -32,8 +32,6 @@ const app = new Vue(
             currentSlide: 0
         },
         methods: {
-            activeThumb: function() {},
-
             previousSlide: function() {
                 // se sono alla prima, mi posiziono sull'ultima
                 if (this.currentSlide == 0) {
@@ -54,6 +52,10 @@ const app = new Vue(
                 }
                 
                 console.log('Next', this.currentSlide);
+            },
+
+            clickThumb: function(index) {
+                this.currentSlide = index;
             }
         }
     }
