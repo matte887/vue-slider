@@ -30,7 +30,7 @@ const app = new Vue(
                 }
             ],
             currentSlide: 0,
-            prova: undefined
+            timer: undefined
         },
         methods: {
             previousSlide: function() {
@@ -60,7 +60,7 @@ const app = new Vue(
             },
 
             autoScroll: function() {
-                this.prova = setInterval(this.nextSlide, 1500);
+                this.timer = setInterval(this.nextSlide, 1500);
             },
 
             // counter: function() {
@@ -71,8 +71,8 @@ const app = new Vue(
             // }
 
             stopAutoScroll: function() {
-                clearInterval(this.prova);
-                this.prova = undefined;
+                clearInterval(this.timer);
+                this.timer = undefined;
             }
         },
 
