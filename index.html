@@ -20,7 +20,7 @@
                 @mouseover="stopAutoScroll"
                 @mouseleave="autoScroll"
                 >
-                    <img :src="item.countryImage" alt="">
+                    <img :src="item.countryImage" :alt="item.countryName">
                     <div class="text">
                         <h3>{{item.countryName}}</h3>
                         <p>{{item.countryText}}</p>
@@ -40,7 +40,7 @@
                 :class="index === currentSlide ? 'active' : '' "
                 @click="clickThumb(index)"
                 >
-                    <img :src="item.countryImage" alt="" >
+                    <img :src="item.countryImage" :alt="item.countryName" >
                 </div>
                
             </div>

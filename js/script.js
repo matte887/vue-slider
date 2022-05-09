@@ -42,6 +42,7 @@ const app = new Vue(
                 }
             
                 console.log('Prev', this.currentSlide);
+                this.resetTimer();
             },
 
             nextSlide: function() {
@@ -53,14 +54,16 @@ const app = new Vue(
                 }
                 
                 console.log('Next', this.currentSlide);
+                this.resetTimer();
             },
 
             clickThumb: function(index) {
                 this.currentSlide = index;
+                this.resetTimer();
             },
 
             autoScroll: function() {
-                this.timer = setInterval(this.nextSlide, 1500);
+                this.timer = setInterval(this.nextSlide, 3000);
             },
 
             // counter: function() {
@@ -73,6 +76,10 @@ const app = new Vue(
             stopAutoScroll: function() {
                 clearInterval(this.timer);
                 this.timer = undefined;
+            },
+            resetTimer() {
+                this.stopAutoScroll();
+                this.autoScroll();
             }
         },
 
